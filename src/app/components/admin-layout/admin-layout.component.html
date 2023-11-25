@@ -1,0 +1,18 @@
+<div class="sidenav">
+  <a routerLink="/admin/dashboard">DashBoard
+  </a>
+  <a routerLink="/admin/customers">Customers</a>
+  <a routerLink="/admin/rooms">Rooms</a>
+  <a routerLink="/admin/staffs">Staffs</a>
+  <a routerLink="/admin/payment">Payment</a>
+
+  <button   type="button" class="btn btn-danger" (click)="logOut()">Log Out</button>
+</div>
+
+<!--routerLink ="/login"-->
+
+<div style="margin-left: 220px">
+<!--  <h3> Hello {{userDetails.userName}}</h3>-->
+  <router-outlet></router-outlet>
+</div>
+

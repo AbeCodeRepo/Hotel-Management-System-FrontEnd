@@ -1,0 +1,15 @@
+<div class= "background_image">
+
+  <div class="form-container">
+    <div><p class="big_front" style="font-size:6vw;">lets go to <br>Hotel</p></div>
+    <form [formGroup] = "loginForm" action="" method="post">
+      <h2>login now</h2>
+
+      <input type="email" name="email" required placeholder="enter your email" formControlName = "userEmail">
+      <input type="password" name="password" required placeholder="enter your password" formControlName = "password">
+      <input type="submit" name="submit" value="login now" class="form-btn" (click)="onLogin()" [disabled]="!isValid()">
+      <p>don't have an account? <a href="register.php">register now</a></p>
+    </form>
+
+  </div>
+</div>

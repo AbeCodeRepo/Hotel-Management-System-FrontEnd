@@ -1,0 +1,41 @@
+
+<div class= "background_image">
+
+
+
+<div class="form-container">
+  <span *ngIf="pageType == 'edit'">
+     <div><p class="big_front" style="font-size:6vw;">Edit <br>Room</p></div>
+  </span>
+  <span *ngIf="pageType == 'new'">
+     <div><p class="big_front" style="font-size:6vw;">Add <br>Room</p></div>
+  </span>
+
+  <form [formGroup] = "roomForm" action="" method="post">
+    <h2>Room Form</h2>
+
+    <label > Room Type</label>
+    <select class="form-select" formControlName = "roomType">
+<!--      <option selected>Room Type</option>-->
+      <option [value]="room.roomType">{{room.roomType}}</option>
+      <option value="single" >Single</option>
+      <option value="double" >Double</option>
+      <option value="family" >Family</option>
+
+    </select>
+
+<!--    <label > Room Type</label>-->
+<!--    <input type="text" name="roomType" required placeholder="Room Type" formControlName = "roomType">-->
+    <label class="form1" > Room number</label>
+    <input type="text" name="roomNo" required placeholder="Room number" formControlName = "roomNo">
+    <label class="form2" > One Day Price</label>
+    <input type="text" name="oneDayPrice" required placeholder="One Day Price" formControlName = "oneDayPrice">
+    <label class="form3" > Status</label>
+    <input type="text" name="status" required placeholder="Status" formControlName = "status">
+    <input *ngIf="pageType == 'edit'" type="submit" name="submit" value="EDIT" class="form-btn" (click)="saveData()" >
+    <input *ngIf="pageType == 'new'" type="submit" name="submit" value="SAVE" class="form-btn" (click)="saveData()">
+<!--    <p>don't have an account? <a href="register.php">register now</a></p>-->
+  </form>
+
+</div>
+</div>

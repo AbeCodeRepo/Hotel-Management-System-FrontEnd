@@ -1,0 +1,18 @@
+
+<div class= "background_image">
+
+<div class="form-container">
+  <form [formGroup] = "calculateForm" action="" method="post">
+    <h2>Calculate Price</h2>
+
+    <label class="form1" >Number of Days Stayed</label>
+    <input type="text" name="email" required placeholder="Number of Days Stayed" formControlName = "daysValue">
+    <label class="form2" > Price of the Room</label>
+    <input type="text" name="password" required placeholder="Price of the Room" formControlName = "roomPrice">
+    <label  > Total Price</label>
+    <input type="text" name="password" required placeholder="Total Price" formControlName = "totalPrice">
+    <input type="submit" name="submit" value="Check Price" class="form-btn" (click)="checkPrice()" >
+  </form>
+
+</div>
+</div>

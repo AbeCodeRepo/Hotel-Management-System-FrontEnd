@@ -1,0 +1,59 @@
+<!--<form>-->
+
+<!--  <div class="d-flex justify-content-around">-->
+
+<!--    <div style="width: 30%">-->
+<!--      <label class="form-label"> Customer Name</label>-->
+<!--      <input class="form-control" placeholder="Customer Name">-->
+<!--    </div>-->
+
+<!--    <div style="width: 30%">-->
+<!--      <label class="form-label"> Customer Mobile Number</label>-->
+<!--      <input class="form-control" placeholder="Mobile Number">-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="d-flex justify-content-around">-->
+<!--    <div style="width: 60%">-->
+<!--      <label for="exampleFormControlTextarea1" class="form-label"> Customer Address</label>-->
+<!--      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="d-flex justify-content-around">-->
+<!--    <div class="mb-3">-->
+<!--      <label class="form-label"> Status</label>-->
+<!--      <input class="form-control" placeholder="Status">-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+<!--</form>-->
+
+<div class= "background_image">
+
+<div class="form-container">
+  <span *ngIf="pageType == 'edit'">
+     <div><p class="big_front" style="font-size:6vw;">Edit <br>Customer</p></div>
+  </span>
+  <span *ngIf="pageType == 'new'">
+     <div><p class="big_front" style="font-size:6vw;">Add <br>Customer</p></div>
+  </span>
+ 
+  <form [formGroup] = "customerForm" action="" method="post">
+    <h2>Customer Form</h2>
+    <label > Customer Name</label>
+    <input type="text" name="name" required placeholder="Customer's name" formControlName = "customerName">
+    <label class="form1"> Mobile number</label>
+    <input type="text" name="mobileNo" required placeholder="Mobile number" formControlName = "mobileNo">
+    <label class="form2" > Customer's Address</label>
+    <textarea class="form-control" name="address" required placeholder="Customer's Address" rows="3" formControlName = "address"></textarea>
+    <label class="form3" > Status</label>
+    <input type="text" name="status" required placeholder="Status" formControlName = "status">
+    <input *ngIf="pageType == 'edit'" type="submit" name="submit" value="EDIT" class="form-btn" (click)="saveData()" >
+    <input *ngIf="pageType == 'new'" type="submit" name="submit" value="SAVE" class="form-btn" (click)="saveData()">
+<!--    <p>don't have an account? <a href="register.php">register now</a></p>-->
+  </form>
+
+</div>
+</div>
